@@ -10,7 +10,7 @@ jobs:
       - name: Trigger Jenkins Build
         run: |
           # Define the URI
-          $uri = "http://localhost:8080/job/Sanity/build?token=TriggerSanity"
+          $uri = "http://localhost:8080/job/Sanity/build?token=iamsarojini"
           
           # Define the username and API token
           $username = "Sarojini"

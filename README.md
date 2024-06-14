@@ -1,1 +1,1 @@
-Run Sanity pack
+Run Sanity

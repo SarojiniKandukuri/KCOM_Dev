@@ -1,1 +1,1 @@
-Execute Sanity pack Config
+Run Sanity pack Config

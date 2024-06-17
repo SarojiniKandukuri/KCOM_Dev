@@ -1,1 +1,1 @@
-Trigger Sanity pack
+Run Sanity pack

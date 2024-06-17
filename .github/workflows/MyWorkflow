@@ -14,7 +14,7 @@ jobs:
           
           # Define the username and API token
           $username = "Sarojini"
-          $apiToken = "111877aeebeb61d45b214b7dd4083864b9"
+          $apiToken = "11566f7496b443dced8ea42a96ba66e430"
           
           # Encode the credentials to Base64
           $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("${username}:${apiToken}")))

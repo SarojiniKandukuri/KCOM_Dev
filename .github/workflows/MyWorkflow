@@ -1,14 +1,28 @@
-name: Trigger Sanity Job
-
-on: 
+name: Trigger Jenkins Build
+on:
   push:
     branches:
       - main
-
 jobs:
-  trigger:
+  build:
     runs-on: self-hosted
     steps:
-      - name: Trigger Jenkins Job
+      - name: Trigger Jenkins Build
         run: |
-          curl -u Sarojini:111877aeebeb61d45b214b7dd4083864b9 http://localhost:8080/job/Sanity/build?token=iamsarojini
+          # Define the URI
+          $uri = "http://localhost:8080/job/Sanity/build?token=iamsarojini"
+          
+          # Define the username and API token
+          $username = "Sarojini"
+          $apiToken = "111877aeebeb61d45b214b7dd4083864b9"
+          
+          # Encode the credentials to Base64
+          $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("${username}:${apiToken}")))
+          
+          # Create headers
+          $headers = @{
+              Authorization = "Basic $base64AuthInfo"
+          }
+          
+          # Make the request with the Authorization header
+          Invoke-WebRequest -Uri $uri -Headers $headers -UseBasicParsing
